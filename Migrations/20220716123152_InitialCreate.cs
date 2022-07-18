@@ -16,7 +16,7 @@ namespace la_mia_pizzeria_model.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Immagine = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Nome = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Descrizione = table.Column<string>(type: "text", nullable: false),
+                    Descrizione = table.Column<string>(type: "text(100)", nullable: false),
                     Prezzo = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>

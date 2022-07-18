@@ -31,7 +31,7 @@ namespace la_mia_pizzeria_model.Migrations
 
                     b.Property<string>("Descrizione")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text(100)");
 
                     b.Property<string>("Immagine")
                         .IsRequired()

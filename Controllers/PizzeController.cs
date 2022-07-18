@@ -7,7 +7,7 @@ namespace la_mia_pizzeria_model.Controllers
     {
         [HttpGet]
         public IActionResult Index()
-        {
+        {               
             List<Pizze> pizze = new List<Pizze>();
 
             using (PizzeContext db = new PizzeContext())
