@@ -48,7 +48,8 @@
                 href="@Url.Action("Create", "Pizze")">
                 Aggiungi una pizza
             </a>
-
+            <!-- Con il model Razor possiamo iniziare a inserire delle condizioni -->
+            <!-- Attraverso if controlliamo se non ci sono Pizze, se non ci sono risponde con un h3 altrimenti carica le pizze presenti nel else -->
             @if(Model.Count() == 0)
             {
                 <h3>Non ci sono Pizze Presenti</h3>
@@ -67,12 +68,15 @@
 
                         @foreach (Pizze pizzaNellaLista in Model)
                         {
+                            <!-- Il model é una lista di pizze, che abbiamo inserito in alto, ricordiamo che il controller passa a quel template una lisa di pizze completa -->
+                            <!-- Ricordiamo che dobbiamoo inserire un ID per ogni elemento della lista perché é richiesto dal model -->                            
                             <tr>
                                 <td>@pizzaNellaLista.Id</td>
                                 
                                 <td class="immagine"><img class="post-list-immagine" src="@pizzaNellaLista.Immagine"></td>
                                 <td class="nome">@pizzaNellaLista.Nome</td>
                                 <td class="descrizione">@pizzaNellaLista.Descrizione</td>
+                                <!-- Inserisco il tag "a" che serve per fare il link, questo punta al metodo dettagli, del controller Pizze -->
                                 <td>
                                     <a class="btn btn-info btn-sm" href="@Url.Action("Details", "Pizze", new { id = pizzaNellaLista.Id })">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>

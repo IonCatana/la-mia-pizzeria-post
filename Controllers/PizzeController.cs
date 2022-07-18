@@ -38,6 +38,7 @@ namespace la_mia_pizzeria_model.Controllers
                 return NotFound("La pizza con l'id " + id + "non è stato trovato");
             }
         }
+        //Creo un metodo per aggiungere pizze alla mia pizzeria da parte dell'utente
 
         [HttpGet]
         public IActionResult Create()
@@ -45,11 +46,13 @@ namespace la_mia_pizzeria_model.Controllers
             return View("FormPizze");
         }
 
-
+        //Inserisco Il HttpPost e inserisco il validation per evitare gli hacker
         [HttpPost]
         [ValidateAntiForgeryToken]
+        //Creo un metodo chiamato nuovaPizza per aggiungere le pizze, aggiungere il model
         public IActionResult Create(Pizze nuovaPizza)
         {
+            //se il modello non é valido ritorniamo una view
             if (!ModelState.IsValid)
             {
                 return View("FormPizze", nuovaPizza);
@@ -58,6 +61,7 @@ namespace la_mia_pizzeria_model.Controllers
             using (PizzeContext db = new PizzeContext())
             {
                 Pizze pizzaDaCreare = new Pizze(nuovaPizza.Immagine, nuovaPizza.Nome, nuovaPizza.Descrizione, nuovaPizza.Prezzo);
+                //Se il modello é coretto prendiamo la lista Pizze e il metodo get che aggiungerá questa pizza alla lista
                 db.Pizze.Add(nuovaPizza);
                 db.SaveChanges();
             }

@@ -1,5 +1,6 @@
 ﻿@model Pizze
-
+<!-- Questa é la view che serve per aggiungere le pizze, inoltre sono inserite anche i validation che servono a dare delle regole --> 
+<!-- Con questa regola l'utente puó corregere il model che sta creanda, cosi da inviarlo corretamente -->
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -14,12 +15,12 @@
                     <span asp-validation-for="Immagine" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
-                    <strong>Nome pizza:</strong>
+                    <strong>Nome Pizza:</strong>
                     <input asp-for="Nome" class="d-block w-100" />
                     <span asp-validation-for="Nome" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
-                    <strong>Contenuto:</strong>
+                    <strong>Descrizione:</strong>
                     <textarea asp-for="Descrizione" rows="10" class="d-block w-100"></textarea>
                     <span asp-validation-for="Descrizione" class="text-danger"></span>
                 </div>
