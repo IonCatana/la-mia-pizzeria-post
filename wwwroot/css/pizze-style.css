@@ -61,8 +61,8 @@ p {
 }
 
 .poster__img {
-    width: 55%;
-    height: 100%;
+    width: 400px;
+    height: 350px;    
 }
 
     .poster__img img {
